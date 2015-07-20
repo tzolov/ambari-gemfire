@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+ 
+<configuration>
+
+  <property>
+    <name>geode.installation.file.path</name>
+    <value>/data/apache-geode-1.0.0-incubating-SNAPSHOT.tar.gz</value>
+    <description>File path of Geode installation file (.tar.gz).</description>
+  </property>
+
+  <property>
+    <name>geode.installation.file.download.url</name>
+    <value>https://dl.dropboxusercontent.com/u/79241625/apache-geode-1.0.0-incubating-SNAPSHOT.tar.gz</value>
+    <description>If the {geode.installation.file.path tarball} doesn't exist use this URL to download it from specified HTTP server.</description>
+  </property>
+
+  <property>
+    <name>geode.user</name>
+    <value>gemfire</value>
+    <description>Linux user account for geode install and processes.</description>
+  </property>
+
+  <property>
+    <name>geode.group</name>
+    <value>gemfire</value>
+    <description>Linux group for geode install and processes.</description>
+  </property>
+
+  <property>
+    <name>geode.user.password</name>
+    <value>gemfire</value>
+    <property-type>PASSWORD</property-type>
+    <description>Geode user password.</description>
+  </property>
+
+  <property>
+    <name>geode.installation.directory</name>
+    <value>/opt/pivotal</value>
+    <description>Installation directory for Geode.</description>
+  </property>
+
+  <property>
+    <name>geode.locator.working.directory</name>
+    <value>/data/geode/locator</value>
+    <description>Working directory for Geode locator.</description>
+  </property>
+
+  <property>
+    <name>geode.locator.port</name>
+    <value>10334</value>
+    <description>Port for Geode locator. Default is 10334. When installing in a cloud environment (e.g., AWS, GCE, Azure, etc.), please make sure this port is properly configured in your firewall policy.</description>
+  </property>
+
+  <property>
+    <name>geode.server.working.directory</name>
+    <value>/data/geode/server</value>
+    <description>Working directory for Geode server.</description>
+  </property>
+
+  <property>
+    <name>geode.server.port</name>
+    <value>10334</value>
+    <description>Port for Geode server. Default is 10334. When installing in a cloud environment (e.g., AWS, GCE, Azure, etc.), please make sure this port is properly configured in your firewall policy.</description>
+  </property>
+
+  <property>
+    <name>geode.locator.properties.file</name>
+    <description>Content of --properties.file for Geode Locator.</description>
+    <value>
+jmx-manager=true
+jmx-manager-start=true
+http-service-port=7070
+jmx-manager-port=1099
+membership-port-range=2303-2308
+memcached-port=8118
+tcp-port=8161
+log-level=info
+statistic-sampling-enabled=true
+    </value>
+  </property>
+
+  <property>
+    <name>geode.server.properties.file</name>
+    <description>Content of --properties.file for Geode Server.</description>
+    <value>
+jmx-manager=false
+jmx-manager-start=false
+log-level=info
+membership-port-range=2303-2308
+memcached-port=8118
+tcp-port=8161
+statistic-sampling-enabled=true
+    </value>
+  </property>
+</configuration>

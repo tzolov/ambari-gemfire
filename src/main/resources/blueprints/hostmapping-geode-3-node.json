@@ -1,8 +1,8 @@
 {
-  "blueprint": "blueprint-gemfire-3-node",
+  "blueprint": "blueprint-geode-3-node",
   "host_groups": [
     {
-      "name": "gemfire_locator",
+      "name": "geode_locator",
       "hosts": [
         {
           "fqdn": "c6401.ambari.apache.org"
@@ -10,7 +10,7 @@
       ]
     },
     {
-      "name": "gemfire_server",
+      "name": "geode_server",
       "hosts": [
         {
           "fqdn": "c6402.ambari.apache.org"

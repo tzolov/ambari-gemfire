@@ -3,14 +3,14 @@
     <schemaVersion>2.0</schemaVersion>
     <services>
         <service>
-            <name>GEMFIRE</name>
-            <displayName>GemFire</displayName>
+            <name>GEODE</name>
+            <displayName>Geode</displayName>
             <comment>In Memory Data Grid</comment>
             <version>0.1</version>
             <components>
                 <component>
-                    <name>GEMFIRE_LOCATOR</name>
-                    <displayName>GemFire Locator</displayName>
+                    <name>GEODE_LOCATOR</name>
+                    <displayName>Geode Locator</displayName>
                     <category>MASTER</category>
                     <cardinality>1+</cardinality>
                     <commandScript>
@@ -20,13 +20,13 @@
                     </commandScript>
                 </component>
                 <component>
-                    <name>GEMFIRE_SERVER</name>
-                    <displayName>GemFire Server</displayName>
+                    <name>GEODE_SERVER</name>
+                    <displayName>Geode Server</displayName>
                     <category>SLAVE</category>
                     <cardinality>1+</cardinality>
                     <dependencies>
                         <dependency>
-                            <name>GEMFIRE/GEMFIRE_LOCATOR</name>
+                            <name>GEODE/GEODE_LOCATOR</name>
                             <scope>cluster</scope>
                         </dependency>
                     </dependencies>
@@ -38,8 +38,8 @@
                 </component>
              </components>
             <configuration-dependencies>
-                <config-type>gemfire-config</config-type>
-                <config-type>gemfire-env</config-type>
+                <config-type>geode-site</config-type>
+                <config-type>geode-env</config-type>
             </configuration-dependencies>
         </service>
     </services>
