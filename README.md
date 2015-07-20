@@ -24,7 +24,7 @@ ls -lah target/distributions/
 7453 Jul 20 14:10 geode-ambari-plugin-phd30-0.1-1.noarch.rpm
 ```
 RPMs for `PHD3.0` and `HDP2.2` are generated as well as a compressed tarball. 
-#### Install the plugin on `PHD3.0` using the geode-ambari-plugin-phd-1.0-2.noarch.rpm RPM.
+#### Install the plugin on `PHD3.0` using the geode-ambari-plugin-phd RPM
 Copy `geode-ambari-plugin-phd30-0.1-1.noarch.rpm` to your Ambari server and run
 ```
 sudo yum -y ./geode-ambari-plugin-phd30-0.1-1.noarch.rpm
