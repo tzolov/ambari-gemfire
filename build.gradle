@@ -17,8 +17,8 @@ buildRpm.enabled = false
 
 
 ospackage {
-	version = '1.0'
-	release = 2
+	version = '0.1'
+	release = 1
 	arch = NOARCH
 	os = LINUX
 	user 'root'
@@ -36,14 +36,14 @@ ospackage {
 }
 
 task phd30Rpm(type: Rpm) {
-	packageName = 'geode-ambari-plugin-phd'
+	packageName = 'geode-ambari-plugin-phd30'
 	from('src/main/resources/services') {
 		into '/var/lib/ambari-server/resources/stacks/PHD/3.0/services'
 	}
 }
 
 task hdp22Rpm(type: Rpm) {
-	packageName = 'geode-ambari-plugin-hdp'
+	packageName = 'geode-ambari-plugin-hdp22'
 	from('src/main/resources/services') {
 		into '/var/lib/ambari-server/resources/stacks/HDP/2.2/services'
 	}
@@ -51,7 +51,7 @@ task hdp22Rpm(type: Rpm) {
 
 
 task distTgz(type: Tar) {
-	baseName = 'geode-ambari-plugin-1.0'
+	baseName = 'geode-ambari-plugin-' + ospackage.version + '-' + ospackage.release.toString() 
 	compression = Compression.GZIP
 	from { 'src/main/resources/services' }
 		 
