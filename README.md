@@ -1,5 +1,15 @@
 [Ambari](https://ambari.apache.org/) Plugin for [Apache Geode](http://geode.incubator.apache.org/) ([GemFire](http://pivotal.io/big-data/pivotal-gemfire)) 
 ----
+#### Quick Start
+To try the Apache Geode Ambari Plugin you can use the pre-build RPMs formt the Big-Data Bintray YUM repository. This line would add the yum repository to your CentOS/RedHat system: 
+```
+sudo wget https://bintray.com/big-data/rpm/rpm -O /etc/yum.repos.d/bintray-big-data-rpm.repo
+```
+Run this to install the plugion in PHD30:
+```
+sudo yum -y install geode-ambari-plugin-phd30
+```
+For HDP you have `geode-ambari-plugin-hdp22` and `geode-ambari-plugin-hdp23`
 #### Build the geode-ambari-plugin
 Clone the project and checkout the `geode` branch (master still points to gemfire)
 ```
@@ -19,15 +29,16 @@ mvn clean package
 If successful the build artifacts are generated in `target\distribution\` 
 ```
 ls -lah target/distributions/
-3303 Jul 20 14:10 geode-ambari-plugin-0.1-1.tgz
-7448 Jul 20 14:10 geode-ambari-plugin-hdp22-0.1-1.noarch.rpm
-7453 Jul 20 14:10 geode-ambari-plugin-phd30-0.1-1.noarch.rpm
+3.3K Jul 26 18:16 geode-ambari-plugin-1.1-2.tgz
+7.3K Jul 26 18:16 geode-ambari-plugin-hdp22-1.1-2.noarch.rpm
+7.3K Jul 26 18:16 geode-ambari-plugin-hdp23-1.1-2.noarch.rpm
+7.3K Jul 26 18:16 geode-ambari-plugin-phd30-1.1-2.noarch.rpm
 ```
 RPMs for `PHD3.0` and `HDP2.2` are generated as well as a compressed tarball. 
 #### Install the plugin on `PHD3.0` using the geode-ambari-plugin-phd RPM
-Copy `geode-ambari-plugin-phd30-0.1-1.noarch.rpm` to your Ambari server and run
+Copy the builded RPM (`geode-ambari-plugin-phd30-1.1-2.noarch.rpm`) to your Ambari server and run
 ```
-sudo yum -y ./geode-ambari-plugin-phd30-0.1-1.noarch.rpm
+sudo yum -y ./geode-ambari-plugin-phd30-1.1-2.noarch.rpm.rpm
 ```
 Restart the Ambari Server
 ```
