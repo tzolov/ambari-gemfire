@@ -1,15 +1,14 @@
 Ambari Plugin for [Apache Geode](http://geode.incubator.apache.org/) (GemFire) 
 ----
 #### Quick Start  [ ![Download](https://api.bintray.com/packages/big-data/rpm/geode-ambari-plugin/images/download.svg) ](https://bintray.com/big-data/rpm/geode-ambari-plugin/_latestVersion)
-Install the latest plugin RPM from public YUM repository. Add the yum repository to your CentOS/RedHat system: 
+Install the latest plugin RPM from public YUM repository. Add the yum repository to your CentOS/RedHat system, install the plugin and restart Ambari Server: 
 ```
 sudo wget https://bintray.com/big-data/rpm/rpm -O /etc/yum.repos.d/bintray-big-data-rpm.repo
-```
-Run this to install the plugin in PHD30:
-```
 sudo yum -y install geode-ambari-plugin-phd30
+sudo /etc/init.d/ambari-server restart
 ```
-For HDP you have `geode-ambari-plugin-hdp22` and `geode-ambari-plugin-hdp23`
+Above will install Geode plugin on PHD30 Hadoop distro. For HDP2.2 install `geode-ambari-plugin-hdp22` and for HDP2.3 install `geode-ambari-plugin-hdp23` instead.
+
 #### Build the geode-ambari-plugin
 Clone the project and checkout the `geode` branch (master still points to gemfire)
 ```
