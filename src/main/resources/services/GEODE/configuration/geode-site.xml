@@ -17,26 +17,26 @@
 
   <property>
     <name>geode.user</name>
-    <value>gemfire</value>
+    <value>geode</value>
     <description>Linux user account for geode install and processes.</description>
   </property>
 
   <property>
     <name>geode.group</name>
-    <value>gemfire</value>
+    <value>geode</value>
     <description>Linux group for geode install and processes.</description>
   </property>
 
   <property>
     <name>geode.user.password</name>
-    <value>gemfire</value>
+    <value>geode</value>
     <property-type>PASSWORD</property-type>
     <description>Geode user password.</description>
   </property>
 
   <property>
     <name>geode.installation.directory</name>
-    <value>/opt/pivotal</value>
+    <value>/opt/geode</value>
     <description>Installation directory for Geode.</description>
   </property>
 

@@ -81,7 +81,7 @@ class Slave(Script):
 
         cmd = """
 source {conf_dir}/geode-env.sh
-gfsh << EOF
+gfsh >>{geode_server_dir}/gfsh.log << EOF
 start server --name=server-$HOSTNAME --server-port={geode_server_port} --dir={geode_server_dir} --locators={geode_locator_hostname}[{geode_locator_port}] --properties-file={conf_dir}/geode.properties
 exit;
 EOF"""
@@ -93,7 +93,7 @@ EOF"""
 
         cmd = """
 source {conf_dir}/geode-env.sh
-gfsh << EOF
+gfsh >>{geode_server_dir}/gfsh.log << EOF
 stop server --dir={geode_server_dir}
 exit;
 EOF"""

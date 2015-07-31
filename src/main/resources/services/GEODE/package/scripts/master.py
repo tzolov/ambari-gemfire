@@ -78,7 +78,7 @@ class Master(Script):
 
 		cmd = """
 source {conf_dir}/geode-env.sh
-gfsh << EOF
+gfsh >>{geode_locator_dir}/gfsh.log << EOF
 start locator --name=locator-$HOSTNAME --port={geode_locator_port} --dir={geode_locator_dir} --properties-file={conf_dir}/locator.properties
 exit;
 EOF"""
@@ -90,7 +90,7 @@ EOF"""
 
 		cmd = """
 source {conf_dir}/geode-env.sh
-gfsh << EOF
+gfsh >>{geode_locator_dir}/gfsh.log << EOF
 stop locator --dir={geode_locator_dir}
 exit;
 EOF"""

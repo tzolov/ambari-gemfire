@@ -6,7 +6,7 @@
             <name>GEODE</name>
             <displayName>Geode</displayName>
             <comment>In Memory Data Grid</comment>
-            <version>0.1</version>
+            <version>1.2</version>
             <components>
                 <component>
                     <name>GEODE_LOCATOR</name>
