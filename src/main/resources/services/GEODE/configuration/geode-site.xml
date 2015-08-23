@@ -91,6 +91,8 @@ membership-port-range=2303-2308
 memcached-port=8118
 tcp-port=8161
 statistic-sampling-enabled=true
+http-service-port=8484
+start-dev-rest-api=true
     </value>
   </property>
 </configuration>
