@@ -12,6 +12,15 @@ Above will install Geode plugin on PHD30 Hadoop distro. For HDP2.2 install `geod
 [<img align="left" src="http://img.youtube.com/vi/riJKZn5-5Sc/3.jpg" alt="zeppelin-view" hspace="15" width="70"></img>](https://www.youtube.com/watch?v=riJKZn5-5Sc)
 The [Geode Service Video](https://www.youtube.com/watch?v=riJKZn5-5Sc) illustrates the capabilities of the plugin. It shows how to install it from an YUM repository and how to use it to deploy Geode cluster via Ambari.
 
+#### Deploy Geode cluster with Ambari
+1. Login to Ambari server
+2. Open the `Services` view and click on `Actions`/`+Add Services` button.
+3. Select the `Geode` service from the list and press `Next`.
+4. Select a host for the Geode Locator component and press `Next`.
+5. Select hosts for the Goede Server components. You can not collocate Geode Locator with Geode Servers!
+6. Press `Next`.
+7. Open the geode-site.xml configuration panel. By default the plugin will check if the `geode.installation.file.path` points to a valid Geode tarball. If the tarball is not available the plugin will use `geode.installation.file.download.url` to download it. By default plugin will use this URL to download the Geode tarball: https://dl.dropboxusercontent.com/u/79241625/apache-geode-1.0.0-incubating-SNAPSHOT.tar.gz tarball. You can change the download URL or provide a Geode tarball locally by setting the `geode.installation.file.path`. Note that the local tarball must be provided to all servers and locators at the same path location.
+8. Press `Next` to finish the deployment.
 #### Build the geode-ambari-plugin
 Clone the project and checkout the `geode` branch (master still points to gemfire)
 ```
@@ -46,15 +55,7 @@ Restart the Ambari Server
 ```
 sudo /etc/init.d/ambari-server restart
 ```
-#### Use the plugin to deploy Geode cluster via Ambari
-1. Login to Ambari server
-2. Open the `Services` view and click on `Actions`/`+Add Services` button.
-3. Select the `Geode` service from the list and press `Next`.
-4. Select a host for the Geode Locator component and press `Next`.
-5. Select hosts for the Goede Server components. You can not collocate Geode Locator with Geode Servers!
-6. Press `Next`.
-7. Open the geode-site.xml configuration panel. By default the plugin will check if the `geode.installation.file.path` points to a valid Geode tarball. If the tarball is not available the plugin will use `geode.installation.file.download.url` to download it. By default plugin will use this URL to download the Geode tarball: https://dl.dropboxusercontent.com/u/79241625/apache-geode-1.0.0-incubating-SNAPSHOT.tar.gz tarball. You can change the download URL or provide a Geode tarball locally by setting the `geode.installation.file.path`. Note that the local tarball must be provided to all servers and locators at the same path location.
-8. Press `Next` to finish the deployment. 
+ 
 
 
 
