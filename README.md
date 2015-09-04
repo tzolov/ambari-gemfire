@@ -9,6 +9,9 @@ sudo /etc/init.d/ambari-server restart
 ```
 Above will install Geode plugin on PHD30 Hadoop distro. For HDP2.2 install `geode-ambari-plugin-hdp22` and for HDP2.3 install `geode-ambari-plugin-hdp23` instead.
 
+[<img align="left" src="http://img.youtube.com/vi/riJKZn5-5Sc/3.jpg" alt="zeppelin-view" hspace="15" width="70"></img>](https://www.youtube.com/watch?v=riJKZn5-5Sc)
+The [Geode Service Video](https://www.youtube.com/watch?v=riJKZn5-5Sc) illustrates the capabilities of the plugin. It shows how to install it from an YUM repository and how to use it to deploy Geode cluster via Ambari.
+
 #### Build the geode-ambari-plugin
 Clone the project and checkout the `geode` branch (master still points to gemfire)
 ```
