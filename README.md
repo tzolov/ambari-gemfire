@@ -21,6 +21,7 @@ The [Geode Service Video](https://www.youtube.com/watch?v=riJKZn5-5Sc) illustrat
 6. Press `Next`.
 7. Open the geode-site.xml configuration panel. By default the plugin will check if the `geode.installation.file.path` points to a valid Geode tarball. If the tarball is not available the plugin will use `geode.installation.file.download.url` to download it. By default plugin will use this URL to download the Geode tarball: https://dl.dropboxusercontent.com/u/79241625/apache-geode-1.0.0-incubating-SNAPSHOT.tar.gz tarball. You can change the download URL or provide a Geode tarball locally by setting the `geode.installation.file.path`. Note that the local tarball must be provided to all servers and locators at the same path location.
 8. Press `Next` to finish the deployment.
+
 #### Build the geode-ambari-plugin
 Clone the project and checkout the `geode` branch (master still points to gemfire)
 ```
