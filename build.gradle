@@ -20,7 +20,7 @@ buildRpm.enabled = false
 def projectName = "geode-ambari-plugin"
 
 ospackage {
-	version = '1.3'
+	version = '1.4'
 	release = 2
 	arch = NOARCH
 	os = LINUX

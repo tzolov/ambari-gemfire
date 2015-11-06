@@ -79,7 +79,7 @@ class Master(Script):
 		cmd = """
 source {conf_dir}/geode-env.sh
 gfsh >>{geode_locator_dir}/gfsh.log << EOF
-start locator --name=locator-$HOSTNAME --port={geode_locator_port} --dir={geode_locator_dir} --properties-file={conf_dir}/locator.properties
+start locator --name=locator-$HOSTNAME --port={geode_locator_port} --dir={geode_locator_dir} --properties-file={conf_dir}/locator.properties --J=-Xms128m --J=-Xmx128m
 exit;
 EOF"""
 		Execute(format(cmd), user=params.geode_user, timeout=300)
@@ -91,7 +91,7 @@ EOF"""
 		cmd = """
 source {conf_dir}/geode-env.sh
 gfsh >>{geode_locator_dir}/gfsh.log << EOF
-stop locator --dir={geode_locator_dir}
+stop locator --dir={geode_locator_dir} --J=-Xms128m --J=-Xmx128m
 exit;
 EOF"""
 		Execute(format(cmd), user=params.geode_user)

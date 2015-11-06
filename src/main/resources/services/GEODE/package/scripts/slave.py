@@ -82,7 +82,7 @@ class Slave(Script):
         cmd = """
 source {conf_dir}/geode-env.sh
 gfsh >>{geode_server_dir}/gfsh.log << EOF
-start server --name=server-$HOSTNAME --server-port={geode_server_port} --dir={geode_server_dir} --locators={geode_locator_hostname}[{geode_locator_port}] --properties-file={conf_dir}/geode.properties
+start server --name=server-$HOSTNAME --server-port={geode_server_port} --dir={geode_server_dir} --locators={geode_locator_hostname}[{geode_locator_port}] --properties-file={conf_dir}/geode.properties --J=-Xms128m --J=-Xmx128m
 exit;
 EOF"""
         Execute(format(cmd), user=params.geode_user, timeout=600)
@@ -94,7 +94,7 @@ EOF"""
         cmd = """
 source {conf_dir}/geode-env.sh
 gfsh >>{geode_server_dir}/gfsh.log << EOF
-stop server --dir={geode_server_dir}
+stop server --dir={geode_server_dir} --J=-Xms128m --J=-Xmx128m
 exit;
 EOF"""
         Execute(format(cmd), user=params.geode_user)
