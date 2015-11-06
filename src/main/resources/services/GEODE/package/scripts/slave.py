@@ -94,7 +94,7 @@ EOF"""
         cmd = """
 source {conf_dir}/geode-env.sh
 gfsh >>{geode_server_dir}/gfsh.log << EOF
-stop server --dir={geode_server_dir} --J=-Xms128m --J=-Xmx128m
+stop server --dir={geode_server_dir}
 exit;
 EOF"""
         Execute(format(cmd), user=params.geode_user)
