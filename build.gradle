@@ -69,7 +69,7 @@ task phd30Rpm(type: Rpm) {
   }
 }
 
-task phd30Rpm(type: Rpm) {
+task phd33Rpm(type: Rpm) {
   packageName = projectName + '-phd33'
   from('src/main/resources/services') {
     into '/var/lib/ambari-server/resources/stacks/PHD/3.3/services'
